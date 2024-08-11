@@ -1,0 +1,21 @@
+/* src/pages/SignupFailed.css */
+.signup-failed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #721c24;
+    padding: 20px;
+}
+
+.signup-failed-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.signup-failed-container p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
