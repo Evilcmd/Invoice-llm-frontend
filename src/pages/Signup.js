@@ -6,6 +6,7 @@ import axios from 'axios';
 import { loginUser } from '../utils';
 import './Signup.css';
 import Spinner from '../components/Spinner';
+import { BaseUrl } from '../utils';
 
 
 const Signup = () => {
@@ -18,7 +19,7 @@ const Signup = () => {
         e.preventDefault();
         setLoading(true); // Set loading to true when fetch starts
         try {
-            const response = await axios.post('http://localhost:8080/signup',
+            const response = await axios.post(BaseUrl + 'signup',
                 { uname: username, passwd: password },
                 { headers: { 'Content-Type': 'application/json' } }
             );

@@ -6,6 +6,7 @@ import axios from 'axios';
 import './Upload.css'
 import Spinner from '../components/Spinner'; // Import spinner
 import './UploadSuccess.css';
+import { BaseUrl } from '../utils';
 
 
 const Upload = () => {
@@ -22,7 +23,7 @@ const Upload = () => {
 
         setLoading(true); // Set loading to true when fetch starts
         try {
-            await axios.post('http://localhost:8080/uploadimage', formData, {
+            await axios.post(BaseUrl + 'uploadimage', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -43,7 +44,7 @@ const Upload = () => {
 
         setLoading(true); // Set loading to true when fetch starts
         try {
-            const response = await axios.post('http://localhost:8080/upload', formData, {
+            const response = await axios.post(BaseUrl + 'upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

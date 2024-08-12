@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import axios from 'axios';
 import { isLoggedIn, getJwtToken } from '../utils';
 import Spinner from '../components/Spinner';
+import { BaseUrl } from '../utils';
 
 
 const Retrieve = () => {
@@ -25,7 +26,7 @@ const Retrieve = () => {
                     return;
                 }
 
-                const response = await axios.get('http://localhost:8080/invoices', {
+                const response = await axios.get(BaseUrl + 'invoices', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setData(response.data);

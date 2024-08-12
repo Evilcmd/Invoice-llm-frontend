@@ -1,10 +1,10 @@
 // src/pages/UploadSuccess.js
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { useNavigate, useLocation } from 'react-router-dom';  // Use useNavigate instead of useHistory
+import { useNavigate, useLocation } from 'react-router-dom';
 import { isLoggedIn } from '../utils';
 import axios from 'axios';
-
+import { BaseUrl } from '../utils';
 
 const UploadSuccess = () => {
     const navigate = useNavigate();  // Replaces useHistory
@@ -19,7 +19,7 @@ const UploadSuccess = () => {
         }
 
         try {
-            await axios.post('http://localhost:8080/invoices', responseBody, {
+            await axios.post(BaseUrl + 'invoices', responseBody, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`

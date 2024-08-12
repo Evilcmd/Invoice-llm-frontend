@@ -6,6 +6,7 @@ import axios from 'axios';
 import { loginUser } from '../utils';
 import './Login.css'
 import Spinner from '../components/Spinner';
+import { BaseUrl } from '../utils';
 
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:8080/login', { uname: username, passwd: password }, { headers: { 'Content-Type': 'application/json' } });
+            const response = await axios.post(BaseUrl + 'login', { uname: username, passwd: password }, { headers: { 'Content-Type': 'application/json' } });
             loginUser(response.data.token);
             navigate('/');
         } catch (error) {

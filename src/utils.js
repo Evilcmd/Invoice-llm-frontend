@@ -20,3 +20,5 @@ export const getUsername = () => {
     // Assuming you store the username in local storage, alternatively decode from JWT
     return localStorage.getItem('username');
 };
+
+export const BaseUrl = "https://invoicellm.onrender.com/"

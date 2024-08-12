@@ -5,7 +5,6 @@ import './SignupFailed.css';
 import Navbar from '../components/Navbar';
 
 const SignupFailed = () => {
-    const navigate = useNavigate();
 
     return (
         <>
